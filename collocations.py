@@ -11,14 +11,29 @@ def dbg(lvl,msg):
 punctuation = {
 			'.': ' <S>',
 			'?': ' <S>',
+			'!': ' <S>',
 			',': ' ',
 			';': ' ',
-			"'": ' ',
 			'"': ' ',
 			'-': ' ',
+			'#': ' ',
+			'&': ' and ',
+			'(': ' ',
+			')': ' ',
+			"don't": 'do not',
+			"'": '',
 			}
 
 replacements = punctuation.copy()
+
+def preformat_text(text):
+	dbg(3, 'text was: {:d} chars'.format(len(text)))
+	_text = text.lower()
+	for k,v in punctuation.iteritems():
+		_text = _text.replace(k,v)
+	dbg(3, 'text now: {:d} chars'.format(len(_text)))
+	
+	return _text
 
 def _count_collocations(text, order=1,
 		pairs=None):
@@ -26,10 +41,7 @@ def _count_collocations(text, order=1,
 	if pairs is None:
 		pairs = {}
 
-	dbg(3, 'text: {}'.format(text))
-	_text = text.lower()
-	for k,v in punctuation.iteritems():
-		_text = _text.replace(k,v)
+	_text = preformat_text(text)
 	words = _text.split()
 	
 	#words = [replacements.get(w, w) for w in words]
@@ -54,6 +66,7 @@ def _pairs_dict_to_df(pairs):
 	"""TODO: this can be more efficient, I'm sure"""
 	ret = pd.DataFrame.from_dict(pairs, orient='index').stack().astype(int)
 	ret = ret.sortlevel(sort_remaining=True) #TODO: this doesn't seem to sort the second level... wtf?
+	ret.index.names=['w1','w2']
 	return ret
 
 def extract_collocations(text,
@@ -164,8 +177,9 @@ if __name__ == '__main__':
 	except NameError:
 		recreate_net = True
 
+	dbg(0, '#pairs: {:d}'.format(len(pairs)))
 	dbg(0, 'median collocation frequency: {:d}'.format(int(pairs.median())))
-	dbg(0, 'mean collocation frequency: {:.1f}'.format(int(pairs.mean())))
+	dbg(0, 'mean collocation frequency: {:.2f}'.format(pairs.mean()))
 	dbg(0, 'max collocation frequency: {:d}'.format(int(pairs.max())))
 
 	if recreate_net:
