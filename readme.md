@@ -33,18 +33,19 @@ This example text should help to picture what I mean here and to allow me to mak
 
 ### 1st-order
 
-(<Capital>,	i)	1
+(<Capital>,	i)	2
 (<Capital>,	this)	1
-(<Start>,	i)	1
-(<Start>,	this)	1
-(about,	<End>)	1
+(<S>,	i)	2
+(<S>,	this)	1
+(about,	<S>)	1
 (allow,	me)	1
 (am,	writing)	1
+(am,	example)	1
 (and,	to)	1
 (as,	simple)	1
 (as,	possible)	1
 (basic,	idea)	1
-(clearer,	<End>	1
+(clearer,	<S>	1
 (example,	text)	1
 (example,	of)	1
 (give,	an)	1
@@ -62,7 +63,7 @@ This example text should help to picture what I mean here and to allow me to mak
 (my,	idea)	1
 (of,	the)	1
 (picture,	what)	1
-(possible,	<End>)	1
+(possible,	<S>)	1
 (should,	help)	1
 (simple,	as)	1
 (text,	should)	1
@@ -96,6 +97,10 @@ Could represent position of a word within the sentence with some special words i
 
 - <Start> = start of sentence
 - <End> = end of sentence
+- <Bound> = start or end
+- <S> = Bound (just shorter, for Sentence)
+
+Do we need <Start> and <End>? If <Bound> is first of pair, it is the start, if second, it is end...
 
 ## POS
 
@@ -125,7 +130,7 @@ But this may even be useable to *create* the part-of-speech scanner, by essentia
 May even make sense to represent punctuation, including capitalisation. This only makes sense for punctuations that can change the meaning of the words with regard to their frequencies. Not sure if question mark, for example, has a different collocation pattern with the words that precede it than a standard full-stop.
 
 ### In any position
-- <Comma>
+- <Comma> - this signifies the end of a phrase or a list, and in both cases, the collocation meaning, in terms of the words before and after the comma is not the same as it would have been if no comma had existed...
 
 ### As first of pair
 - <Capital> - means the first character of the 2nd word in the collocation is capitalised.
