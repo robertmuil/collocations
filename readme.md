@@ -33,50 +33,50 @@ This example text should help to picture what I mean here and to allow me to mak
 
 ### 1st-order
 
-(`<Capital>`,	i)	2
-(`<Capital>`,	this)	1
-(`<S>`,	i)	2
-(`<S>`,	this)	1
-(about,	`<S>`)	1
-(allow,	me)	1
-(am,	writing)	1
-(am,	example)	1
-(and,	to)	1
-(as,	simple)	1
-(as,	possible)	1
-(basic,	idea)	1
-(clearer,	`<S>`	1
-(example,	text)	1
-(example,	of)	1
-(give,	an)	1
-(i,	am)	1
-(i,	mean)	1
-(i,	want)	2
-(idea,	clearer)	1
-(idea,	i)	1
-(help,	to)	1
-(here,	and)	1
-(make,	my)	1
-(make,	this)	1
-(me,	to)	1
-(mean,	here)	1
-(my,	idea)	1
-(of,	the)	1
-(picture,	what)	1
-(possible,	`<S>`)	1
-(should,	help)	1
-(simple,	as)	1
-(text,	should)	1
-(the,	basic)	1
-(this,	as)	1
-(this,	example)	1
-(to,	allow)	1
-(to,	make)	2
-(to,	picture)	1
-(to,	give)	1
-(want,	to)	2
-(what,	I)	1
-(writing,	about)	1
+- (`<Capital>`,	i)	2
+- (`<Capital>`,	this)	1
+- (`<S>`,	i)	2
+- (`<S>`,	this)	1
+- (about,	`<S>`)	1
+- (allow,	me)	1
+- (am,	writing)	1
+- (am,	example)	1
+- (and,	to)	1
+- (as,	simple)	1
+- (as,	possible)	1
+- (basic,	idea)	1
+- (clearer,	`<S>`	1
+- (example,	text)	1
+- (example,	of)	1
+- (give,	an)	1
+- (i,	am)	1
+- (i,	mean)	1
+- (i,	want)	2
+- (idea,	clearer)	1
+- (idea,	i)	1
+- (help,	to)	1
+- (here,	and)	1
+- (make,	my)	1
+- (make,	this)	1
+- (me,	to)	1
+- (mean,	here)	1
+- (my,	idea)	1
+- (of,	the)	1
+- (picture,	what)	1
+- (possible,	`<S>`)	1
+- (should,	help)	1
+- (simple,	as)	1
+- (text,	should)	1
+- (the,	basic)	1
+- (this,	as)	1
+- (this,	example)	1
+- (to,	allow)	1
+- (to,	make)	2
+- (to,	picture)	1
+- (to,	give)	1
+- (want,	to)	2
+- (what,	I)	1
+- (writing,	about)	1
 
 # Determining Synonyms from collocations
 
